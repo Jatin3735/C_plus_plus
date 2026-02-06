@@ -42,9 +42,15 @@ int main()
         }
         case 2 : {
             cout<<"Vector is : ";
-            for(int x : vec){
+            if(!vec.empty()){
+                for(int x : vec){
             cout<<x<<" ";
             }
+            }
+            else{
+                cout<<"Vector is empty "<<endl;
+            }
+            
             cout<<endl;
             break;
         }
