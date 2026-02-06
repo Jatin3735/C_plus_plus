@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-    int n,choice;;
+    int n,choice,flag = 1;
     cout<<"Enter size : ";
     cin>>n;
     vector<int> vec;
@@ -19,10 +19,12 @@ int main()
     for(int x : vec){
         cout<<x<<" ";
     }
-    while(1){
-        cout<<"\nWhich opertion you want to perfome(1. Update / 2 Display / 3. Delete / 4. Exit : ";
+    while(flag){
+        cout<<"\nWhich opertion you want to perfome(1. Update / 2 Display / 3. Delete / 4. Exit) : ";
         cin>>choice;
-        if(choice == 1 ){
+        switch(choice){
+            
+        case 1 : {
             int in,up;
             cout<<"At which index : ";
             cin>>in;
@@ -35,16 +37,27 @@ int main()
             else{
                 cout<<"invalid index "<<endl;
             }
+            break;
             
         }
-        else if(choice == 2){
+        case 2 : {
             cout<<"Vector is : ";
             for(int x : vec){
             cout<<x<<" ";
             }
+            cout<<endl;
+            break;
         }
-        else if(choice == 3){
-            int in ;
+        case 3 : {
+            int ch;
+            cout<<"(1. last element popping / 2. Particular index) : ";
+            cin>>ch;
+            if(ch == 1){
+                vec.pop_back();
+                cout<<"last element is Deleted"<<endl;
+            }
+            else if(ch == 2){
+                int in ;
             cout<<"which index u want to Delete : ";
             cin>>in;
             if(in<=vec.size()){
@@ -54,13 +67,21 @@ int main()
             else{
                 cout<<"Invalid index"<<endl;
             }
-        }
-        else if(choice == 4){
-            cout<<"Exiting the program";
+            }
+            else{
+                cout<<"Invalid choice "<<endl;
+            }
             break;
         }
-        else{
+        case 4 : {
+            cout<<"Exiting the program";
+            flag = 0;
+            break;
+        }
+        default : {
             cout<<"Invalid choice ";
+            break;
+            }
         }
     }
     return 0;
