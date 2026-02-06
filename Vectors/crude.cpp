@@ -25,7 +25,8 @@ int main()
         switch(choice){
             
         case 1 : {
-            int in,up;
+            if(!vec.empty()){
+                int in,up;
             cout<<"At which index : ";
             cin>>in;
             cout<<"Enter new marks : ";
@@ -36,6 +37,11 @@ int main()
             }
             else{
                 cout<<"invalid index "<<endl;
+            }
+            
+            }
+            else{
+                cout<<"vector is empty "<<endl;
             }
             break;
             
@@ -55,7 +61,8 @@ int main()
             break;
         }
         case 3 : {
-            int ch;
+            if(!vec.empty()){
+                int ch;
             cout<<"(1. last element popping / 2. Particular index) : ";
             cin>>ch;
             if(ch == 1){
@@ -76,6 +83,11 @@ int main()
             }
             else{
                 cout<<"Invalid choice "<<endl;
+            }
+            
+            }
+            else{
+                cout<<"vector is empty"<<endl;
             }
             break;
         }
