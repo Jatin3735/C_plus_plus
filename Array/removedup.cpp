@@ -9,6 +9,7 @@ int main(){
         cout<<"Enter element "<<i+1<<" : ";
         cin>>arr[i];
     }
+    cout <<"Now Array : ";
     for(i=0;i<n;i++){
         int count=0;
         for(j=0;j<n;j++){
