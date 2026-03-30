@@ -35,16 +35,54 @@ void pop(){
     fi = fi->next; 
     delete temp; 
     cout<<"popped "<<pValue<<endl;
-}
+};
+void peak(){
+    Node *temp= fi;
+    int pp = temp->data;
+    fi = fi->next;
+    cout<<"At Peak : "<<pp<<endl;
+};
 int main()
 {
-    push(10);
-    push(20);
-    push(30);
-    push(40);
-    display();
-    pop();
-    pop();
-    display();
+    int flag =1;
+    cout<<"What u want to do ?\n1. Push\n2. Pop\n3. Display\n4. Peak\n5. Exit"<<endl;
+    int choice;
+    
+    while(flag){
+        cin>>choice;
+    switch(choice){
+        case 1:{
+            int n,i;
+            cout<<"how many entries : ";
+            cin>>n;
+            for(i=0;i<n;i++){
+                int value;
+                cin>>value;
+                push(value);
+            }
+            break;
+        }
+        case 2:{
+            pop();
+            break;
+        }
+        case 3:{
+            display();
+            break;
+        }
+        case 4:{
+            peak();
+            break;
+        }
+        case 5:{
+            flag= 0;
+            break;
+        }
+        default:{
+            cout<<"invalid choice"<<endl;
+        }
+    }
+    }
     return 0;
 }
+
